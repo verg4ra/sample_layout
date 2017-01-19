@@ -1,0 +1,96 @@
+/* box-sizing */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* font for whole site*/
+body {
+  font-family: sans-serif;
+  color: white;
+}
+
+/* background colors*/
+main   { background-color: tomato;      }
+aside  { background-color: deepskyblue; }
+footer { background-color: gold;        }
+header { background-color: lightgreen;  }
+
+/* other */
+
+hr {
+  margin: 1em 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .navigation */
+
+.navigation {
+  max-width: 900px;
+  margin: auto;
+  list-style: none;
+  background-color: #444;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column wrap;
+}
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+.navigation a:hover {
+  background: white;
+  color: #444;
+}
+
+
+/* center container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* add padding to container divs */
+.container > * {
+  padding: 2em;
+}
+
+main, aside {
+  flex: 1 %100;
+}
+header, footer {
+  flex: 1;
+}
+
+@media all and (min-width: 375px) {
+  .navigation {
+    flex-flow: row;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .container {
+    flex-flow: row;
+  }
+  main {
+    flex: 2;
+    display: flex;
+  }
+  aside {
+    flex: 1;
+  }
+
+  p {
+    align-self: center;
+  }
+}
